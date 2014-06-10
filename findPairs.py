@@ -3,16 +3,17 @@
 import random
 from random import randint
 
-pilotos = ['Filipe','Gaucho','Pinheiro','Muniz','Fernandes']
+pilotos = ['Filipe','Gaucho','Pinheiro','Muniz','Fernandes','Laine','Douglas','Heleno','Jeff','Ze','Monica']
 random.shuffle(pilotos)
 x=0
+
 for p in pilotos:
-  
-  pilotos.pop(x)
-  cp = randint(0,len(pilotos)-1)
-  print "Piloto:"+p+", Copiloto:"+pilotos[cp]
-  pilotos.pop(cp)
-  if (len(pilotos) < 2):
-    next
+#  print len(pilotos)
+#  print x
+  if ( len(pilotos) -x > 1):
+    if ( x % 2 == 0):
+      print "Piloto "+p+",",
+    else:
+      print "Copiloto "+p
   x=x+1
   
