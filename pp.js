@@ -33,16 +33,12 @@ for(x=1;x<=10;x++){
 }
 function escolhePiloto(devs,included){
         nonIncluded = _.difference(devs,included);
-//      console.log('pilots disponiveis '+nonIncluded); 
         pilot = _.sample(nonIncluded);
-//      console.log('sorteei o '+pilot+' que tem '+vagas[pilot].p+' vagas');
         while (vagas[pilot].p <= 0 ){
                 pilot = _.sample(nonIncluded);
                 if (pilot == undefined) return pilot;
-//              console.log('sorteei de novo o '+pilot+' que tem '+vagas[pilot].p+' vagas');
                 nonIncluded = _.without(nonIncluded,pilot);
         }
-//      console.log('debitando uma vaga do piloto '+pilot);
         vagas[pilot].p--;
         return pilot;
 }
@@ -50,10 +46,8 @@ function escolheCoPiloto(devs,included){
         nonIncluded = _.difference(devs,included);
         cop = _.sample(nonIncluded);
         if (cop == undefined) return cop;
-//      console.log('sorteei o cop '+cop+' que tem '+vagas[cop].c+' vagas');
         while (vagas[cop].c <= 0 ){
                 cop = _.sample(nonIncluded);
-                //console.log('sorteei de novo o '+pilot+' que tem '+vagas[pilot].p+' vagas');
                 nonIncluded = _.without(nonIncluded,cop);
                 if (cop == undefined) return cop;
         }
